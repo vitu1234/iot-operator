@@ -1,0 +1,13 @@
+apiVersion: iot.dev/v1alpha1
+kind: OCFDevice
+metadata:
+  name: ocfdevice-1
+spec:
+  name: ocfdevice-1
+  id: "sdl49847984dldjlk4gp1"
+  owned: false
+  ownerId: "00000000-0000-0000-0000-000000000001"
+  # resourceTypes:
+  #   - count: 3
+  #     name: "dummy-nodepool"
+  #     size: "s-1vcpu-2gb"

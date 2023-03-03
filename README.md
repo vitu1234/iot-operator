@@ -26,3 +26,14 @@ Register the type using schemes in register.go
         5. "${execDir}"/generate-groups.sh all github.com/vitu1234/iot-operator/pkg/client github.com/vitu1234/iot-operator/pkg/apis iot.dev:v1alpha1 --go-header-file "${execDir}"/hack/boilerplate.go.txt
 
             WHERE; project path: github.com/vitu1234/iot-operator
+    - create the CRDs so the server can recognize the CRs
+    - Generate CRDs with controller gen
+        - controller-gen
+            generate CRD for the type
+            1. export GOPATH=~/go
+            2. go get sigs.k8s.io/controller-tools/cmd/controller-gen@v0.6.0
+            3. export PATH=$PATH:$GOPATH/bin
+            4. source ~/.bashrc
+            5. controller-gen --version
+            6. controller-gen command run in in project path: 
+                controller-gen paths=github.com/vitu1234/iot-operator/pkg/apis/iot.dev/v1alpha1 crd:trivialVersions=true crd:crdVersions=v1 output:crd:artifacts:config=manifests
